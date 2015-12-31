@@ -17,6 +17,8 @@ const BLINK	 = "\x1b[7m";
 const RESET      = "\x1b[0m";
 
 const maxTries 	= 100000;
+
+// Save the last maze for REPL
 var LastMaze 	= null;
 
 function nextChar(){ 
