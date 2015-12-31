@@ -120,7 +120,7 @@ function walkMaze(maze){
       	//    c. if LS and LS then move RIGHT starting with first LS
 	// 2. Lookup in table which direction to move for DIRECTION + SLASH
 	// 3. Mark each visited box with MarkedESC 
-	// 3. Repeat until X | Y  < 0, Y > HEIGHT, or  X > WIDTH 
+	// 4. Repeat until X | Y  < 0, Y > HEIGHT, or  X > WIDTH 
 	//    a. IF X > WIDTH then the puzzle is solved
 	//    b. IF X | Y < O, or Y > HEIGHT then the puzzle has no solution
 
