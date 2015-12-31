@@ -1,23 +1,23 @@
 "use strict";
 
-const LS = 0;
-const RS = 1;
+const LS  = 0;
+const RS  = 1;
 const MLS = 2;
 const MRS = 3;
 
-const LEFT = 0;
-const UP = 1;
+const LEFT  = 0;
+const UP    = 1;
 const RIGHT = 2;
-const DOWN = 3;
+const DOWN  = 3;
 
 const RightSlash = "\u2571";
 const LeftSlash  = "\u2572";
-const MarkedESC  = "\x1b[7m"; //"\x1b[90m"; // "\x1b[7m";
-const BLINK	 = "\x1b[5m";
+const MarkedESC  = "\x1b[32m";
+const BLINK	 = "\x1b[7m";
 const RESET      = "\x1b[0m";
 
-const maxTries = 100000;
-var LastMaze = null;
+const maxTries 	= 100000;
+var LastMaze 	= null;
 
 function nextChar(){ 
 	let a = [RS, LS]; 
@@ -112,12 +112,12 @@ function walkMaze(maze){
 			[ DOWN,RIGHT,UP,LEFT ] ];	
          
 	// Start Walking //
-	// 1. Start in upper lefthand side and look two matching  slashes
+	// 1. Start in upper lefthand side and look for two matching slashes
 	//    a. if LS then RS or RS then LS then move down 1
-	//    b. if RS then RS then move RIGHT starting with second RS
-      	//    c. if LS then LS then move RIGHT starting with first LS
+	//    b. if RS and RS then move RIGHT starting with second RS
+      	//    c. if LS and LS then move RIGHT starting with first LS
 	// 2. Lookup in table which direction to move for DIRECTION + SLASH
-	// 3. Mark each visited box with 
+	// 3. Mark each visited box with MarkedESC 
 	// 3. Repeat until X | Y  < 0, Y > HEIGHT, or  X > WIDTH 
 	//    a. IF X > WIDTH then the puzzle is solved
 	//    b. IF X | Y < O, or Y > HEIGHT then the puzzle has no solution
